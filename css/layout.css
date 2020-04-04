@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 5vmin/1.45 'Roboto Slab', serif;
+    background: #e6e6e6;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+
+/* page */
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page__item {
+    padding: 1em;
+    flex: 1;
+    margin: 0;
+    background: white;
+}
+
+.page__header {
+    background: blueviolet;
+    flex: 0 1 10vmax;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+}
+
+.page__item:not(:first-child) {
+    margin-top: 0;
+}
+
+.page__hero {
+    flex-basis: 90vmax;
+}
+
+.page__static {
+    flex-grow: 0;
+}
+
+@media all and (orientation: landscape) {
+    .page__header {
+        flex-basis: 20vmin;
+    }
+
+    .page__hero {
+        flex-basis: 80vmin;
+    }
+}
