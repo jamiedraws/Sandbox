@@ -30,11 +30,15 @@ p {
 
 .page__header {
     background: blueviolet;
+    color: white;
     flex: 0 1 10vmax;
     position: sticky;
     top: 0;
     display: flex;
+    padding-top: 0;
+    padding-bottom: 0;
     align-items: center;
+    justify-content: space-between;
 }
 
 .page__item:not(:first-child) {
@@ -57,4 +61,61 @@ p {
     .page__hero {
         flex-basis: 80vmin;
     }
+}
+
+/* nav */
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav--scroll {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    transform: translateZ(0);
+}
+
+.nav__item {
+    color: currentColor;
+    padding: 1em;
+    -webkit-appearance: none;
+    background: inherit;
+    border: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.nav__item:not(:hover):not(:focus) {
+    text-decoration: none;
+}
+
+.nav__label {
+    position: relative;
+}
+
+.nav__label:hover > .nav__sub,
+.nav__label:focus-within > .nav__sub {
+    opacity: 1;
+    transform: translateY(0%);
+    pointer-events: auto;
+}
+
+.nav__sub {
+    position: absolute;
+    right: 0;
+    background: #e4e4e4;
+    color: #252525;
+    box-shadow: 0 0 1em #a09d9d;
+    min-width: 12em;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 12em;
+    opacity: 0;
+    pointer-events: none;
+    flex-wrap: nowrap;
+    transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+    transform: translateY(20%);
 }
